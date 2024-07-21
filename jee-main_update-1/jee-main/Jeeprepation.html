@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEE Course Portal</title>
+    <link rel="stylesheet" href="jeepreaption.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .header {
+            background-color: #DF2771;
+            color: white;
+            padding: 15px 0;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #ffcccb;
+        }
+
+        .section {
+            padding: 50px 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .card-container,
+        .quiz-container,
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .card,
+        .quiz-card,
+        .video-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            width: 300px;
+            transition: transform 0.3s;
+        }
+
+        .card img,
+        .quiz-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .card:hover,
+        .quiz-card:hover,
+        .video-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3,
+        .quiz-card h3,
+        .video-card h3 {
+            margin: 15px 0;
+        }
+
+        .start-button {
+            background-color: #DF2771;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 15px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .start-button:hover {
+            background-color: #ffcccb;
+        }
+
+        .footer {
+            background-color: #f1f1f1;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            .header .container {
+                flex-direction: column;
+            }
+
+            .card,
+            .quiz-card,
+            .video-card {
+                width: 45%;
+            }
+
+            .navbar {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .navbar a {
+                margin: 10px 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .card,
+            .quiz-card,
+            .video-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>JEE Course Portal</h1>
+            <nav class="navbar">
+                <a href="#courses">Courses</a>
+                <a href="#quizzes">Quizzes</a>
+                <a href="#videos">YouTube Videos</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="courses" class="section">
+            <div class="container">
+                <h2>Courses Offered</h2>
+                <div class="card-container">
+                    <div class="card">
+                        <img src="jeemains.avif" alt="JEE Main">
+                        <h3>JEE Main</h3>
+                        <button onclick="showCourseDetails('jee-main')">View Details</button>
+                        <div id="jee-main" class="course-details" style="display: none;">
+                            <p>Comprehensive course covering all subjects for JEE Main.</p>
+                            <p>Price: 20,000/-</p>
+                            <button class="start-button" onclick="openGoogleForm()">Join Now</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="Jeeadvance.jpeg" alt="JEE Advanced">
+                        <h3>JEE Advanced</h3>
+                        <button onclick="showCourseDetails('jee-advanced')">View Details</button>
+                        <div id="jee-advanced" class="course-details" style="display: none;">
+                            <p>Advanced level course for JEE Advanced preparation.</p>
+                            <p>Price: 25,000/-</p>
+                            <button class="start-button" onclick="openGoogleForm()">Join Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="quizzes" class="section">
+            <div class="container">
+                <h2>Quizzes</h2>
+                <div class="quiz-container">
+                    <div class="quiz-card">
+                        <img src="physics.jpg" alt="Physics Quiz">
+                        <h3>Physics Quiz</h3>
+                        <button class="start-button" onclick="startQuiz('physics')">Start Exam</button>
+                    </div>
+                    <div class="quiz-card">
+                        <img src="chemistry.jpeg" alt="Chemistry Quiz">
+                        <h3>Chemistry Quiz</h3>
+                        <button class="start-button" onclick="startQuiz('chemistry')">Start Exam</button>
+                    </div>
+                    <div class="quiz-card">
+                        <img src="maths.jpeg" alt="Maths Quiz">
+                        <h3>Maths Quiz</h3>
+                        <button class="start-button" onclick="startQuiz('maths')">Start Exam</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="videos" class="section">
+            <div class="container">
+                <h2>YouTube Videos</h2>
+                <div class="video-container">
+                    <div class="video-card">
+                        <h3>Physics Videos</h3>
+                        <iframe width="100%" height="335" src="https://www.youtube.com/embed/C0OWJ4dSHWg?si=9spfRJuZBs9Fd8UV" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card">
+                        <h3>Chemistry Videos</h3>
+                        <iframe width="100%" height="335" src="https://www.youtube.com/embed/C0OWJ4dSHWg?si=9spfRJuZBs9Fd8UV" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card">
+                        <h3>Maths Videos</h3>
+                        <iframe width="100%" height="335" src="https://www.youtube.com/embed/C0OWJ4dSHWg?si=9spfRJuZBs9Fd8UV" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 JEE Course Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+  
+
+    
+
+    <script src="scriptjee.js"></script>
+    <script>
+        function openGoogleForm() {
+            window.open('https://docs.google.com/forms/d/e/1FAIpQLSfUpdWfLDfa7Br1pJJwuTRwJUx0UId5-hj2xuqz11n7z3BbBA/viewform?usp=sf_link', '_blank');
+        }
+
+        function showCourseDetails(courseId) {
+            const courseDetails = document.getElementById(courseId);
+            const display = courseDetails.style.display;
+            courseDetails.style.display = display === 'block' ? 'none' : 'block';
+        }
+    </script>
+    </body>
+
+</html>

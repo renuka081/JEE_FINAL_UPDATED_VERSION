@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="shortcut icon" type="image/png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAxqnf3JTfkO9RRU8JE0Bs71kQPGkP3fM-6w&s">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sals Jee site</title>
+    <link rel="shortcut icon" type="png" href="channels4_profile.jpg">
+    <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+       <style>
+        .s-card {
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.5); /* Adding a semi-transparent background */
+            color: white; /* Making the text white for better visibility */
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+        .JEE_WORD {
+            text-align: center;
+            font-size: 24px;
+        }
+        .svg-image img {
+            max-width: 100%; /* Ensuring the image fits within its container */
+            height: auto; /* Maintaining the aspect ratio */
+        }
+        @media screen and (max-width: 600px) {
+    .footer-container {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+    .Popular-Subject {
+        margin-top: 100px; /* Adjust as needed */
+    }
+    .right-col,
+    .left-col {
+        width: 100%;
+        margin-bottom: 30px; /* Adjust as needed */
+    }
+    .social-media {
+        justify-content: center;
+    }
+    .logo {
+        margin-left: 0;
+    }
+    nav ul,
+    .srch,
+    .get-started {
+        display: none;
+    }
+    .menu {
+        display: block;
+    }
+    nav {
+        padding-bottom: 10px;
+    }
+    .quote p,
+    .quote h5,
+    .play {
+        text-align: center;
+    }
+    .quote p {
+        font-size: 24px; /* Adjust font size as needed */
+    }
+    .service-container .right-side img {
+        width: 100%;
+    }
+    .title {
+        margin-top: 20px; /* Adjust as needed */
+    }
+    .videos {
+        display: flex;
+        flex-direction: column;
+    }
+    .video {
+        width: 100%;
+    }
+    footer .btn {
+        width: 100%;
+        margin-top: 20px;
+    }
+    .svg-image img {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+/* Medium screens (601px to 960px) */
+@media screen and (min-width: 601px) and (max-width: 960px) {
+    .footer-container {
+        max-width: 80%;
+        padding: 0 40px;
+    }
+    .Popular-Subject {
+        margin-top: 150px; /* Adjust as needed */
+    }
+    .right-col,
+    .left-col {
+        width: 100%;
+        margin-bottom: 40px; /* Adjust as needed */
+    }
+    .logo {
+        margin-left: 20%;
+    }
+}
+
+
+/* Extra large screens (above 1200px) */
+@media screen and (min-width: 1201px) {
+    .footer-container {
+        max-width: 60%;
+        padding: 0 80px;
+    }
+    .Popular-Subject {
+        margin-top: 200px; /* Adjust as needed */
+    }
+    .right-col,
+    .left-col {
+        width: 50%;
+        margin-bottom: 60px; /* Adjust as needed */
+    }
+    .logo {
+        margin-left: 30%;
+    }
+}
+
+    </style>
+</head>
+<body>
+<!-- Navigation Bar -->
+    <header id="header">
+        <nav>
+            <div class="logo"><img src="solo.jpeg" alt="logo" height="100%" width="100%"></div>
+            <ul>
+                <li><a class="active" href="">Home</a></li>
+                <li><a href="#services_section">Services</a></li>
+                <li><a href="#contactus_section">Contact</a></li>
+            </ul>
+            <!-- <div class="srch"><input type="text" class="search" placeholder="Search here..."><img src="data:image/png;base64,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" alt="search" onclick="slide()"></div> -->
+            <a class="get-started" href="login.html">Get Started</a>
+            <img src="images/icon/menu.png" class="menu" onclick="sideMenu(0)" alt="menu">
+        </nav>
+        <div class="head-container">
+            <div class="quote">
+                <p><b><i>Empowering Minds, Shaping Futures - Sals Education</i></b></p>
+                <h5>
+                    JEE (Joint Entrance Examination) is an Indian engineering entrance assessment for admission to various technical undergraduate programs in prestigious institutions like IITs, NITs, and IIITs, known for its competitive nature and rigorous preparation.
+                </h5>
+            </div>
+            <div class="svg-image">
+                <img src="services.jpeg" alt="svg">
+            </div>
+        </div>
+        <div class="side-menu" id="side-menu">
+            <div class="close" onclick="sideMenu(1)"><img src="images/icon/close.png" alt=""></div>
+            <ul>
+                <li><a href="#about_section">About</a></li>
+                <li><a href="#services_section">Services</a></li>
+                <li><a href="#contactus_section">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+<!-- Some Popular Subjects -->
+ <div class="Popular-Subject"></div>
+<div class="title">
+    <span>Popular course</span>
+</div>
+<br><br>
+<div class="course">
+    <center><div class="cbox">
+    <div class="det"><a href="Jeeprepation.html"><img src="images/courses/book.png" height="100%" width="100%">JEE Preparation</a></div>
+    
+    </div></center>
+    
+</div>
+
+<!-- ABOUT -->
+    <div class="diffSection" id="about_section">
+        <center><p style="font-size: 75px; padding: 100px"><b><i>About Us</i></b></p></center>
+        <div class="about-content">
+            <div class="side-image">
+                <img class="sideImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwGdjIBJnpelovEuhYx5qW0GoQT4wMagq8jQ&s">
+            </div>
+            <div class="side-text">
+                <h2>What you think about us?</h2>
+                <p>SALS, the Group Founded in 2016, SALS Education (SALS Educational Academy Private Limited) has been a beacon of ambition for individuals aspiring to prestigious Government Officer positions,
+                    particularly as Gazetted Officers. We have revolutionized the landscape of next-generation education through both online and offline modes at an affordable cost<br>
+                    <br>SALS Education offers world-class coaching in various departments: <br>
+                    Department of Civil Service Examination: Special Guidance Programs for IAS, IPS, IFS, along with comprehensive coaching for UPSC, TNPSC, SSC, RRB, TET and many more.</p>
+                    
+            </div>
+        </div>
+    </div>
+
+<!-- SERVICES -->
+    <div class="service-swipe">
+        <div class="diffSection" id="services_section">
+            <center><p style="font-size: 50px; padding: 100px; padding-bottom: 40px; color: #fff;"><b><i>Service</i></b></p></center>
+        </div>
+        <a href="https://jeemain.nta.ac.in/"><div class="s-card"><img src="jee.jpeg"><p class="JEE_WORD"><b>Official JEE Government Website</b></p></div></a>
+    </div>
+ </article>
+</section>
+
+<section id="jee_section" class="accordion-section">
+    <center><h2 class="section-title"><b><i>JEE MAINS AND ADVANCE DETAILS</i></b></h2></center>
+    <button class="accordion">What is JEE?</button>
+    <div class="panel">
+        <p>The Joint Entrance Examination (JEE) is an engineering entrance assessment conducted for admission to various engineering colleges in India. This highly competitive exam is essential for students aspiring to pursue undergraduate engineering programs at prestigious institutions like the Indian Institutes of Technology (IITs), National Institutes of Technology (NITs), and Indian Institutes of Information Technology (IIITs).</p>
+    </div>
+
+    <button class="accordion">Importance of JEE</button>
+    <div class="panel">
+        <h3>Importance of JEE</h3>
+        <p>Cracking JEE opens doors to premier engineering institutions providing top-notch education and career opportunities. It tests a student's knowledge, analytical abilities, time management skills, and perseverance.</p>
+        <h3>JEE Main and Advanced Selection Process</h3>
+        <p>IIT JEE Exam is for the students who have a 10+2 certificate from a recognized board/school.</p>
+        <p>This examination is held in parts every year. To pass this evaluation, the students will first have to clear the Mains examination following which they will qualify for the JEE Advanced exam.</p>
+        <h3>JEE Mains and Advanced Exam Recruitment</h3>
+        <p>Candidates must first understand the IIT JEE Advanced / Mains selection process to get an idea of the selection process and prepare themselves for the evaluation process.</p>
+        <p>The IIT JEE Mains and Advanced exam recruitment are done in two parts: an IIT JEE Mains and an Advanced exam.</p>
+        <h3>IIT JEE Mains Exam</h3>
+        <p>The IIT JEE Mains examination is conducted in online mode, and it consists of objective questions. The following table summarises the exam pattern of the JEE Mains exam process.</p>
+        <p>To know more about the JEE Mains/Advanced Selection Process, click here.</p>
+        <h3>IIT JEE Advanced/ Mains Apply Online 2024</h3>
+        <h3>Here we have explained how to apply for IIT /JEE Mains Exam:</h3>
+        <ul>
+            <li>Go to the official website and open the IIT Mains/ Advanced.</li>
+            <li>Click on the examination link.</li>
+            <li>Register yourself on the link.</li>
+            <li>Fill in the required credentials.</li>
+            <li>Enter the correct details of education qualifications, ID proof, phone number, and address proof.</li>
+            <li>Submit the application fee through a credit /debit card or from any internet banking.</li>
+            <li>Select your slots.</li>
+            <li>Submit the scanned signature and passport size photo.</li>
+            <li>Recheck the form carefully and submit it.</li>
+            <li>Download the application form and take out the printout for further procedures of the exam.</li>
+        </ul>
+        <p>The format for the link of the official portal for JEE Mains and JEE Advanced is in NIC format.</p>
+ 
+    </div>
+
+    <button class="accordion">Preparation Tips</button>
+    <div class="panel">
+        <p>Preparing for JEE requires dedication and strategic planning. Here are some tips to help you succeed:</p>
+        <ul>
+            <li>Create a realistic study plan covering all subjects and topics.</li>
+            <li>Practice regularly with sample papers and previous years' question papers.</li>
+            <li>Understand the exam pattern and marking scheme thoroughly.</li>
+            <li>Focus on time management and speed-solving techniques.</li>
+            <li>Join a coaching institute if necessary for structured guidance.</li>
+            <li>Maintain a healthy balance between study and relaxation.</li>
+        </ul>
+    </div>
+
+    <button class="accordion">Exam Details</button>
+    <div class="panel">
+        <h3>JEE Mains</h3>
+        <p><strong>Eligibility Criteria:</strong> Candidates must have completed their 10+2 or equivalent examination with Physics, Chemistry, and Mathematics. They can attempt JEE Mains a maximum of three times in consecutive years.</p>
+        <p><strong>Exam Pattern:</strong> JEE Mains comprises two papers: Paper 1 for B.E./B.Tech and Paper 2 for B.Arch/B.Planning. It is a computer-based test with 90 questions, carrying 300 marks in total.</p>
+        <p><strong>Syllabus:</strong> The syllabus includes topics from Physics, Chemistry, and Mathematics, following the NCERT curriculum.</p>
+        <table>
+            <tr>
+                <th>Subject</th>
+                <th>Number of Questions</th>
+                <th>Total Marks</th>
+            </tr>
+            <tr>
+                <td>Physics</td>
+                <td>30</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>Chemistry</td>
+                <td>30</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>Mathematics</td>
+                <td>30</td>
+                <td>100</td>
+            </tr>
+        </table>
+        <h3>JEE Advanced</h3>
+        <p><strong>Eligibility Criteria:</strong> Only the top 2.5 lakh candidates (approximately) who qualify JEE Mains are eligible to appear for JEE Advanced. Additionally, candidates must meet other eligibility criteria, including age limit and number of attempts.</p>
+        <p><strong>Exam Pattern:</strong> JEE Advanced consists of two compulsory papers (Paper 1 and Paper 2) conducted on the same day. Both papers are of three hours duration and cover questions from Physics, Chemistry, and Mathematics.</p>
+        <p><strong>Syllabus:</strong> The syllabus for JEE Advanced is more extensive and in-depth compared to JEE Mains. It includes advanced topics from Physics, Chemistry, and Mathematics that require thorough preparation and conceptual understanding.</p>
+    </div>
+    <button class="accordion">Resources and Study Material</button>
+    <div class="panel">
+        <p>Having the right study material is crucial for JEE preparation. Here are some recommended resources:</p>
+        <ul>
+            <li>NCERT textbooks for a strong foundation in basic concepts.</li>
+            <li>Reference books by authors like H.C. Verma, I.E. Irodov, and R.D. Sharma.</li>
+            <li>Online platforms offering video lectures, mock tests, and interactive quizzes.</li>
+            <li>Joining a reputed coaching institute for structured guidance.</li>
+        </ul>
+    </div>
+
+<button class="accordion">JEE Mains and Advanced Syllabus</button>
+    <div class="panel">
+        <h3>Exam Specifications</h3>
+        <p>To prepare yourself for this exam, you must know about the complete syllabus of the exam. The syllabus of the JEE Mains/Advanced exams contain physics, chemistry, mathematics, aptitude test. The syllabus of these subjects is extensive, and to receive good marks, the candidate must prepare himself in the right way.</p>
+        <h3>Post Name</h3>
+        <p>Different IIT sectors</p>
+        <h3>Recruiting Body</h3>
+        <p>National Testing Agency</p>
+        <h3>Selection Procedure</h3>
+        <p>Mains Exam, Advanced Exam, Selection Process</p>
+        <h3>Highlights of JEE Mains Exam</h3>
+        <ul>
+            <li>The JEE Mains exam is an online exam.</li>
+            <li>Aspirants have to solve 105 questions from various topics of the syllabus</li>
+            <li>The total marks of the paper are 400 marks as every correct answer gives four marks.</li>
+            <li>For every wrong answer, there will be no negative marking or deduction of marks.</li>
+            <li>Candidates have to solve the paper of 105 questions in 3 hours</li>
+            <li>It consists of inquiries related to physics, chemistry, mathematics, aptitude tests.</li>
+        </ul>
+        <h3>The following table will briefly explain the exam pattern of the JEE Mains exam:</h3>
+        <table>
+            <tr>
+                <th>Specification</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>Mode of Exam</td>
+                <td>Online</td>
+            </tr>
+            <tr>
+                <td>Number of Questions</td>
+                <td>105</td>
+            </tr>
+            <tr>
+                <td>Total Marks</td>
+                <td>400</td>
+            </tr>
+            <tr>
+                <td>Type of Questions</td>
+                <td>Objective</td>
+            </tr>
+            <tr>
+                <td>Negative Marking</td>
+                <td>None</td>
+            </tr>
+        </table>
+        <h3>The following table describes the topic-wise division of marks briefly for the JEE Mains exam:</h3>
+        <table>
+            <tr>
+                <th>Papers</th>
+                <th>Description</th>
+                <th>Maximum Marks</th>
+                <th>Duration</th>
+            </tr>
+            <tr>
+                <td>Paper I (B.E/ B.Tech)</td>
+                <td> </td>
+                <td>90</td>
+                <td>3 hours</td>
+            </tr>
+            <tr>
+                <td>Paper-II (B.Arch)</td>
+                <td> </td>
+                <td>82</td>
+                <td>3 hours</td>
+            </tr>
+            <tr>
+                <td>Paper III (B.Plan)</td>
+                <td> </td>
+                <td>105</td>
+                <td>3 hours</td>
+            </tr>
+        </table>
+        <h3>Mains Exam</h3>
+        <p>The Advanced JEE Syllabus 2021 is also an online exam.</p>
+        <ul>
+            <li>Aspirants have to solve questions from different topics.</li>
+            <li>It will be a multiple-type question.</li>
+            <li>The total marks of the paper differ in both the paper: Paper I and Paper II</li>
+        </ul>
+        <h3>The following sections of this article will make you understand the syllabus of JEE Mains/Advanced.</h3>
+        <ul>
+            <li>Candidates have to attempt questions within 3 hours.</li>
+            <li>It consists of questions based on physics, chemistry, and mathematics.</li>
+        </ul>
+        <h3>The following table describes the paper wise pattern of JEE Advanced briefly:</h3>
+        <h4>Paper I:</h4>
+        <table>
+            <tr>
+                <th>Subject</th>
+                <th>No. of questions</th>
+                <th>Total Marks</th>
+                <th>Marks Obtained</th>
+                <th>Negative Marking</th>
+            </tr>
+            <tr>
+                <td>Physics</td>
+                <td>5</td>
+                <td>15</td>
+                <td>3</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Chemistry</td>
+                <td>8</td>
+                <td>32</td>
+                <td>4</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Mathematics</td>
+                <td>5</td>
+                <td>15</td>
+                <td>3</td>
+                <td>1</td>
+            </tr>
+        </table>
+        <h4>Paper II:</h4>
+        <table>
+            <tr>
+                <th>Subject</th>
+                <th>No. of questions</th>
+                <th>Total Marks</th>
+                <th>Marks Obtained</th>
+                <th>Negative Marking</th>
+            </tr>
+            <tr>
+                <td>Physics</td>
+                <td>6</td>
+                <td>18</td>
+                <td>3</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Chemistry</td>
+                <td>8</td>
+                <td>32</td>
+                <td>4</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Mathematics</td>
+                <td>4</td>
+                <td>12</td>
+                <td>3</td>
+                <td>-</td>
+            </tr>
+        </table>
+        <h3>JEE Mains and Advanced Syllabus</h3>
+        <p>JEE Mains examination is an online exam conducted in two stages: JEE Mains and JEE Advanced and then the final selection process. For clearing the exam, it is necessary to know every topic or subject that will be asked in the examination. Here we are going to provide the updated syllabus of JEE Mains 2021 and Advanced 2021.</p>
+        <h4>JEE Mains Examination consist of these three main subjects:</h4>
+        <ul>
+            <li><a href="syllabus/jee-mains-physics.html">JEE Mains Physics Syllabus</a></li>
+            <li><a href="syllabus/jee-mains-mathematics.html">JEE Mains Mathematics Syllabus</a></li>
+            <li><a href="syllabus/jee-mains-chemistry.html">JEE Mains Chemistry Syllabus</a></li>
+        </ul>
+        <h3>JEE Mains April 2021 Paper 1 Syllabus</h3>
+        <h4>JEE Physics Syllabus:</h4>
+        <p>Physics and measurement, electrostatics, current electricity, oscillation and waves, thermodynamics, rotational movements, laws of motion, work, energy, and power, kinetic theory of gases, electromagnetic induction, and alternating currents, optics, kinematics, gravitation, properties of solid, liquid, and gas.</p>
+        <h3>JEE Mains Chemistry Syllabus:</h3>
+        <p>These three types of chemistry is described:</p>
+        <h3>Organic chemistry:</h3>
+        <p>Purification and characterization of organic compounds, organic compounds containing halogens, chemistry in everyday life, and some basic principles of organic chemistry.</p>
+        <h3>Physical chemistry:</h3>
+        <p>Basic concepts in chemistry, atomic structure, equilibrium, chemical thermodynamics, chemical bonding and molecular structure, states of matter, chemical kinetics.</p>
+        <h3>Inorganic chemistry:</h3>
+        <p>Classification of elements and periodicity in properties, hydrogen D-and f-block elements, environmental chemistry, block elements, block elements group 13 to group 18 elements.</p>
+        <h3>Mathematics:</h3>
+        <p>Sets, functions and relations, internal calculus, matrices and determinants, complex numbers and quadratic equations, mathematical induction, binomial theorem, statistics and probability, vector algebra, permutations and combinations, mathematical reasoning.</p>
+        <h3>JEE Mains April 2021 Paper-II Syllabus:</h3>
+        <ul>
+            <li>Aptitude</li>
+            <li>Mathematics</li>
+            <li>Drawing Test</li>
+        </ul>
+        <h3>Paper-III</h3>
+        <ul>
+            <li>Mathematics</li>
+            <li>Aptitude Test</li>
+            <li>Planning Based Questions</li>
+        </ul>
+        <h3>JEE Advanced consists of two parts:</h3>
+        <p>Which consists of JEE Advanced 2021 Paper I and II syllabus:</p>
+        <h3>Paper-I</h3>
+        <ul>
+            <li>Physics</li>
+            <li>Chemistry</li>
+            <li>Mathematics</li>
+        </ul>
+        <h2>Paper-II</h2>
+        <h3>Physics:</h3>
+        <p>Thermodynamics, optics, modern physics, magnetism, mechanics, and electricity</p>
+        <h3>Chemistry:</h3>
+        <p>It is divided into three patterns:</p>
+        <h3>Physical chemistry:</h3>
+        <p>Gaseous and liquid state, atomic structure and chemical bonding, energetics, chemical equilibrium, electrochemistry, solutions, surface chemistry, nuclear chemistry, solid-state</p>
+        <h3>Inorganic Chemistry:</h3>
+        <p>Isolation, preparation of and properties of non-metals, compounds and transition elements, ores and minerals, extractive metallurgy</p>
+        <h3>Organic chemistry:</h3>
+        <p>Preparation, properties of alkalis, and alkynes, benzene, phenols, the reaction of carbohydrates, amino acids, and uses of essential polymers.</p>
+        <h3>Mathematics:</h3>
+        <p>Algebra, matrices, trigonometry, probability, analytical geometry, differential, and integral calculus, vectors.</p>
+    </div>
+
+    <button class="accordion">Additional Resources</button>
+    <div class="panel">
+        <h3>Additional Resources for JEE Preparation</h3>
+        <p>For comprehensive preparation, consider the following resources:</p>
+        <ul>
+            <li><a href="https://jeemain.nta.nic.in/webinfo/public/home.aspx" target="_blank">Official JEE Main Website</a></li>
+            <li><a href="https://www.jeeadv.ac.in/" target="_blank">Official JEE Advanced Website</a></li>
+            <li><a href="https://www.khanacademy.org/" target="_blank">Khan Academy</a> - Free online courses and practice exercises.</li>
+            <li><a href="https://www.coursera.org/" target="_blank">Coursera</a> - Online courses from top universities.</li>
+            <li><a href="https://www.edx.org/" target="_blank">edX</a> - Access to high-quality courses from the world's best institutions.</li>
+        </ul>
+    </div>
+</section>
+
+<!-- Add other sections or content here -->
+<!-- CONTACT US -->
+    <div class="diffSection" id="contactus_section">
+        <center><p style="font-size: 50px; padding: 100px"><b><i>Contact Us</i></b></p></center>
+        <div class="csec"></div>
+        <div class="back-contact">
+            <div class="cc">
+                <form action="mailto:salseducation@gmail.com" method="post" enctype="text/plain">
+                    <label>First Name <span class="imp">*</span></label><label style="margin-left: 185px">Last Name <span class="imp">*</span></label><br>
+                    <center>
+                        <input type="text" name="" style="margin-right: 10px; width: 175px" required="required"><input type="text" name="lname" style="width: 175px" required="required"><br>
+                    </center>
+                    <label>Email <span class="imp">*</span></label><br>
+                    <input type="email" name="mail" style="width: 100%" required="required"><br>
+                    <label>Message <span class="imp">*</span></label><br>
+                    <input type="text" name="message" style="width: 100%" required="required"><br>
+                    <label>Additional Details</label><br>
+                    <textarea name="additional"></textarea><br>
+                    <button type="submit" id="csubmit">Send Message</button>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer bg-gray-800 text-white py-12 mt-auto">
+        <div class="container mx-auto text-center">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="courses.html" class="text-gray-400 hover:text-white">Service</a></li>
+                        <li><a href="materials.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div> -->
+                <div>
+                    <h4 class="text-gray-400 hover:text-white">Resources</h4>
+                    <ul>
+                        <li><a href="https://salseducation.com/" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="https://salseducation.com/" class="text-gray-400 hover:text-white">Contact Us</a></li>
+                        <li><a href="https://salseducation.com/" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+    <h4 class="text-gray-400 hover:text-white">Contact</h4><br>
+    <ul class="no-bullets">
+        <li><a href="https://contacts.google.com/" class="text-gray-400 hover:text-white">+91 755 000 9137</a></li><br>
+        <li><a href="https://mail.google.com/" class="text-gray-400 hover:text-white">Gmail</a></li><br>
+        <li>
+            <a href="https://salseducation.com/" class="text-gray-400 hover:text-white">
+                info@salseducation.com
+            </a>
+        </li>
+    </ul>
+</div>
+                    <!--    class="font-bold mb-4"-->
+                <div>
+                <h4 class="text-gray-400 hover:text-white" >Address</h4>
+                    <ul class="no-bullets">
+                    <li class="text-gray-400 hover:text-white"></br> Street City, Chennai 785 India</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-gray-400 hover:text-white">Follow Us</h4><br>
+                    <ul class="social-links">
+                        <li><a href="https://www.facebook.com/salseducation" class="social-icon"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://x.com/salseducation" class="social-icon"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://www.instagram.com/salseducation/" class="social-icon"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://www.linkedin.com/company/salseducation/about/" class="social-icon"><i class="fab fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+         
+        <div class="container mx-auto text-center mt-8">
+            <p class="text-white">&copy; 2024 SALS EDUCATIONAL ACADEMY. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" type="png" href="channels4_profile.jpg">
+	<title>Login SignUp</title>
+	<link rel="stylesheet" type="text/css" href="loginStyle.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+		<div class="form-box">
+			<div class="button-box">
+				<div id="btn"></div>
+				<button type="button" class="toggle-btn" id="log" onclick="login()" style="color: #fff;">Log In</button>
+				<button type="button" class="toggle-btn" id="reg" onclick="register()">Register</button>
+			</div>
+			<div class="social-icons">
+
+				<a href="https://www.facebook.com/your-page-url">
+					<img src="images/icon/fb2.png" alt="Facebook">
+				</a>
+				
+				<a href="https://www.instagram.com/your_username_here">
+					<img src="images/icon/insta.png" alt="Instagram">
+				</a>
+				
+			<a href="https://twitter.com/your_twitter_handle">
+				<img src="data:image/png;base64,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">
+			</a>
+			</div>
+			
+			<!-- Login Form -->
+<form id="login" class="input-group" action="Jee_website.html">
+<form id="login" class="input-group" action="login.php" method="post">
+    <div class="inp">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPlDW5cdwoWPlVRPBstePpJgBNEh9xw9gq6w&s">
+        <input type="text" name="email" id="email" class="input-field" placeholder="Username or Email" style="width: 88%; border:none;" required="required">
+    </div>
+    <div class="inp">
+        <img src="images/icon/password.png">
+        <input type="password" id="password" name="upswd1" class="input-field" placeholder="Password" style="width: 88%; border: none;" required="required">
+    </div>
+    <input type="checkbox" class="check-box">Remember Password
+    <button type="submit" class="submit-btn">Log In</button>
+</form>
+</form>
+
+			<div class="other" id="other">
+				<div class="instead">
+					<h3>or</h3>
+				</div>
+				<button class="connect" onclick="google()">
+					<img src="images/icon/google.png"><span>Sign in with Google</span>
+				</button>
+			</div>
+			
+			<!-- Registration Form -->
+			 <form id="register" class="input-group">
+			<form id="register" class="input-group" action="register.php" method="post">
+				<input type="text" name="uname" class="input-field" placeholder="User Name" required="">
+				<input type="email" name="email" class="input-field" placeholder="Email Address" required="">
+				<input type="password" name="upswd1" class="input-field" placeholder="Create Password" required="">
+				<input type="password"name="upswd2" class="input-field" placeholder="Confirm Password" required="">
+				<input type="checkbox" class="check-box" id="chkAgree" onclick="goFurther()">I agree to the Terms & Conditions
+				<button type="submit" id="btnSubmit" class="submit-btn reg-btn">Register</button>
+			</form>
+		</form>
+		</div>
+		<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
+
